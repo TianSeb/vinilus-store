@@ -1,0 +1,8 @@
+.cart-widget {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    justify-self: end;
+    margin-right: 60px;
+  }
