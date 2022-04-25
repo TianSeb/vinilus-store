@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,500&display=swap');
+body {
+  background-color: #eee;
+  font-family: 'Libre Bodoni', sans-serif;
+}
+
+/*Basic Vinyl Style*/
+.album {
+  margin: 15px;
+  box-shadow: 0 7px 10px #aaa;
+}
+
+.album,
+.album .cover,
+.album .cover img,
+.album .vinyl {
+  width: 300px;
+  height: 300px;
+}
+
+.album > div,
+.album .vinyl > div {
+  position: absolute;
+}
+
+.album .cover {
+  z-index: 2;
+}
+
+.album .vinyl {
+  background-color: #202020;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.album .vinyl .label {
+  background-color:coral;
+  width: 30%;
+  height: 30%;
+  left: 35.5%;
+  top: 34%;
+  border-radius: 50%;
+}
+
+.album .vinyl .hole {
+  background-color: #eee;
+  width: 10%;
+  height: 10%;
+  margin: 45% auto 0 auto;
+  border-radius: 50%;
+}
+
+.textCon {
+  width: 65%;
+  height: 85%;
+  left: 18%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.album .textCon h1 {
+  padding-top: 50px;
+  margin: 0;
+  color: #eee;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+}
+
+.textCon h3 {
+  color: rgb(238, 238, 238);
+  font-size: 0.9em;
+  letter-spacing: 3px;
+}
+
+.albumCd .vinyl {
+  transform: translate(50px, 0)
+}
+
+.albumCd .vinyl:hover,
+.albumCd .cover:hover + .vinyl {
+  transform: translate(300px, 0);
+}
+
+.btn {
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}

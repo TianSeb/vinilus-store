@@ -1,10 +1,12 @@
+import ItemList from './ItemList'
 import './styles/ItemListContainer.css'
 
-const ItemListContainer = ({title}) => {
+const ItemListContainer = () => {
 return (
-<div className='item-list-container'>
-    <h1>{title}</h1>
-</div>
+    <div className='item-list-container'>
+        <ItemList/>
+    </div>
+
 )
 }
 export default ItemListContainer

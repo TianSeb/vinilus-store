@@ -9,14 +9,15 @@ const brand = "https://imagizer.imageshack.com/img924/1759/ALh05r.jpg"
 return (
 <div className="header-container">
 
-  <div className="logo-container">
-    <img src={brand} alt="Vinyl" />
-  </div>
-
   <div className="menu-button">
     <FontAwesomeIcon icon={faBars} size="4x" color="white" />
     <span>Menu</span>
   </div>
+  <div className="logo-container">
+    <img src={brand} alt="Vinyl" />
+  </div>
+
+
 
   <nav>
     <ul className="nav-container">
