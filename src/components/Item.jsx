@@ -13,12 +13,12 @@ return (
         <div className="cover">
             <img src={img} alt="disco" />
         </div>
-        <div className="vinyl round">
+        <div className="vinyl round btn" role="button" onClick={onClick}>
             <div className="textCon">
                 <h1>{artist}</h1>
                 <h3>{album}</h3>
             </div>
-            <div className="btn label round" role="button" onClick={onClick}>
+            <div className="label round">
                 <div className="hole round"></div>
             </div>
         </div>
