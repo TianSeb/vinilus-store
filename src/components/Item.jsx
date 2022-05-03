@@ -1,6 +1,7 @@
+import { LinkContainer } from 'react-router-bootstrap'
 import './styles/Item.css'
 
-const Item = ({artist,album,year,img}) => {
+const Item = ({id,artist,album,year,img}) => {
 
 const onClick = (e) => {
     e.preventDefault()
@@ -11,7 +12,9 @@ return (
 <>
     <div className="album albumCd">
         <div className="cover">
-            <img src={img} alt="disco" />
+            <LinkContainer to={`/vinilos/${id}`}>
+                <img src={img} alt="disco" />
+            </LinkContainer>
         </div>
         <div className="vinyl round btn" role="button" onClick={onClick}>
             <div className="textCon">

@@ -1,5 +1,5 @@
-import Item from "./Item"
-import './styles/ItemList.css'
+import Item from "../Item"
+import './ItemList.css'
 
 const ItemList = ({items}) => {
     return (
@@ -8,6 +8,7 @@ const ItemList = ({items}) => {
                 items.map((item) =>
                     <Item
                         key={item.id}
+                        id={item.id}
                         artist={item.artist}
                         album={item.album}
                         year={item.year}

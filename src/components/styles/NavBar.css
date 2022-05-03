@@ -1,11 +1,11 @@
-.header-container {
+/* .color-nav {
     display: grid;
     grid-template: 1fr 1fr/1fr 1fr; 
     align-items: center;
     padding: 20px 0 20px 0;
     width: 100%;
     max-width: 1024;
-    background-color: #2b2929;
+    background-color: #2b2929 !important ;
 }
 
 nav {
@@ -78,4 +78,4 @@ nav {
         grid-column: auto;
         grid-row: auto;
     }
-}
+} */

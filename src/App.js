@@ -1,13 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import ItemListContainer from './components/ItemList/ItemListContainer';
 import NavBar from './components/NavBar';
+
 
 function App() {
   return (
-    <>
-    <NavBar></NavBar>
-    <ItemListContainer/>
-    </>
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path='/' element={<ItemListContainer/>}/>
+      <Route path='/category/:year' element={<ItemListContainer/>}/>
+      <Route path='/vinilos/:vinylId' element={<ItemDetailContainer/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
