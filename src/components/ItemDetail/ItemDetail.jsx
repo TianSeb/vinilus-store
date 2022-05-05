@@ -5,7 +5,7 @@ const ItemDetail = ({data}) => {
 
 return (
 <>
-    <Container style={{backgroundColor:"purple", marginTop: '40px'}}>
+    <Container className='item-container'>
         <Row className='item-row'> 
             <Col className='item-column' xs={12} sm={12} md={8} lg={6}>
                 <Card.Img className='item-img' variant="top" src={data.img}/> 

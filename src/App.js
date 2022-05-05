@@ -15,6 +15,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/' element={<ItemListContainer/>}/>
+              <Route path='/vinilus-store' element={<ItemListContainer/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/categories/:catId' element={<ItemListContainer/>}/>
               <Route path='/vinilos/:vinylId' element={<ItemDetailContainer/>}/>
