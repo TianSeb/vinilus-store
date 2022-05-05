@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vinilus-store/static/css/main.34cd4a2c.css",
-    "main.js": "/vinilus-store/static/js/main.02f8a558.js",
+    "main.css": "/vinilus-store/static/css/main.1b4cb14a.css",
+    "main.js": "/vinilus-store/static/js/main.3af3ca12.js",
     "static/js/787.d30fee46.chunk.js": "/vinilus-store/static/js/787.d30fee46.chunk.js",
     "index.html": "/vinilus-store/index.html",
-    "main.34cd4a2c.css.map": "/vinilus-store/static/css/main.34cd4a2c.css.map",
-    "main.02f8a558.js.map": "/vinilus-store/static/js/main.02f8a558.js.map",
+    "main.1b4cb14a.css.map": "/vinilus-store/static/css/main.1b4cb14a.css.map",
+    "main.3af3ca12.js.map": "/vinilus-store/static/js/main.3af3ca12.js.map",
     "787.d30fee46.chunk.js.map": "/vinilus-store/static/js/787.d30fee46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34cd4a2c.css",
-    "static/js/main.02f8a558.js"
+    "static/css/main.1b4cb14a.css",
+    "static/js/main.3af3ca12.js"
   ]
 }
