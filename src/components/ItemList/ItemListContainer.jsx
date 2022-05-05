@@ -6,32 +6,30 @@ import './ItemListContainer.css'
 
 
 const ItemListContainer = () => {
-    const { year } = useParams('')
+    const { catId } = useParams('')
     const [records, setRecords] = useState([]);
+    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
+    useEffect(() => 
+    {
+    setLoading(true)
     const getRecordDb = new Promise((res) => {
         setTimeout(() => {
-            if(year){
-                let yearConvert = parseInt(year)
-                res(vinylDb.filter( vinyl => vinyl.year >= yearConvert && vinyl.year <= (yearConvert + 9))) 
-            }
+            const catIdConvert = parseInt(catId) 
+
+            isNaN(catIdConvert) ?
                 res(vinylDb)
-            },200)
+                : res(vinylDb.filter( vinyl => vinyl.year >= catIdConvert && vinyl.year <= (catIdConvert + 9)))
+            },2000)
         })
 
     getRecordDb.then( (result) => {
             setRecords(result)
-        }).catch((err) => {
-        console.log("error loading db")
-        })}
-        ,[year])
+        })
+        .finally(() => setLoading(false))
+    }
+        ,[catId])
 
-return (
-    <div className='item-list-container'>
-        <ItemList items={records}/>
-    </div>
-
-)
+return loading ? (<h2>Cargando Items...</h2>) : (<ItemList items={records}/>)   
 }
 export default ItemListContainer

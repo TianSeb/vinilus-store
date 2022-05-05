@@ -81,7 +81,7 @@ body {
 
 .albumCd .vinyl:hover,
 .albumCd .cover:hover + .vinyl {
-  transform: translate(300px, 0);
+  transform: translate(240px, 0);
 }
 
 .btn {
