@@ -4,8 +4,7 @@ import './ItemDetail.css'
 const ItemDetail = ({data}) => {
 
 return (
-<>
-    <Container className='item-container' fluid>
+    <Container className='item-wrapper'>
         <Row className='item-row'> 
             <Col className='item-column' xs={12} sm={12} md={8} lg={6}>
                 <Card.Img className='item-img' variant="top" src={data.img}/> 
@@ -24,7 +23,6 @@ return (
             </Col>
         </Row>
     </Container>
-</>
 )
 }
 export default ItemDetail

@@ -95,3 +95,27 @@ body {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgb(252, 252, 252);
 }
+
+
+
+@media screen and (max-width: 600px) {
+  .album,
+  .album .cover,
+  .album .cover img,
+  .album .vinyl {
+    width: 175px;
+    height: 175px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+  }
+
+  .album .textCon h1 {
+    padding-top: 30px;
+  }
+
+  .albumCd .vinyl:hover,
+  .albumCd .cover:hover + .vinyl {
+    transform: translate(165px, 0);
+  }
+
+}
