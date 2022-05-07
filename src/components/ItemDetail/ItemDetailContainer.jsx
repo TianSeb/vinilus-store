@@ -8,14 +8,13 @@ const ItemDetailContainer = () => {
   const [vinyl, setVinyl] = useState({})
   const [loading, setLoading] = useState(true)
 
+
   useEffect(() => {
     (async() => {
         const vinylData = await getProductsById(vinylId)
-        if(vinylData) {
             setVinyl(vinylData)
             setLoading(false)
-        }
-    })()
+      })()
   }, [vinylId])
 
   return loading ? <h2 style={{textAlign:'center', marginTop:'15%'}}>Cargando Item...</h2> : <ItemDetail data={vinyl} />

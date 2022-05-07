@@ -13,18 +13,19 @@ return (
         <div className="cover">  
                 <img src={img} alt="disco" />
         </div>
-        <div className="vinyl round btn" role="button" onClick={onClick}>
         <LinkContainer to={`/vinilos/${id}`}>
+        <div className="vinyl round btn" role="button">
             <div className="textCon">
                 <h1>{artist}</h1>
                 <h3>{album}</h3>
             </div>
-        </LinkContainer>
             <div className="label round">
                 <div className="hole round"></div>
             </div>
-        </div>
+        </div> 
+        </LinkContainer> 
     </div>
+   
 );
 }
 export default Item

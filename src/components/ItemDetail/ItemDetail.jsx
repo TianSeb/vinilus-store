@@ -1,9 +1,12 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
+import NotFound404 from "../../pages/NotFound404"
 import './ItemDetail.css'
 
 const ItemDetail = ({data}) => {
 
 return (
+     (!data) ? <NotFound404></NotFound404>
+    :
     <Container className='item-wrapper'>
         <Row className='item-row'> 
             <Col className='item-column' xs={12} sm={12} md={8} lg={6}>

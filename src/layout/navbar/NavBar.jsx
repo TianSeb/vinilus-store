@@ -25,14 +25,16 @@ return (
       {
         categories.map((cat) => { 
           if (cat.subCategories.length === 0) {
-            return (<Nav.Link className='nav-link' key={cat.id}><LinkContainer className='nav-link' to={cat.adress}><span>{cat.text}</span></LinkContainer></Nav.Link>)
+            return (<Nav.Link className='nav-link' key={cat.id} ><LinkContainer className='nav-link' to={cat.adress}><span>{cat.text}</span></LinkContainer></Nav.Link>)
           }
           else { 
             return(
             <NavDropdown title="Vinilos" id="collasible-nav-dropdown"  className='nav-link' key={cat.id}>
               {cat.subCategories.map((subcat) => {
                 return (
-                  <NavDropdown.Item key={subcat.id}><LinkContainer to={subcat.adress}><span>{subcat.text}</span></LinkContainer></NavDropdown.Item>
+                  <NavDropdown.Item className='nav-dropdown' key={subcat.id} to={subcat.adress} as={LinkContainer}>
+                    <span>{subcat.text}</span>
+                    </NavDropdown.Item>
                 )
               })}
               <NavDropdown.Divider />
