@@ -3,6 +3,7 @@ import ItemDetailContainer from '../components/ItemDetail/ItemDetailContainer';
 import ItemListContainer from '../components/ItemList/ItemListContainer';
 import NavBar from '../layout/navbar/NavBar';
 import About from '../pages/About';
+import Cart from '../components/Cart/Cart'
 import NotFound404 from '../pages/NotFound404';
 import ItemLayout from '../pages/ItemLayout'
 
@@ -13,9 +14,10 @@ const AppRouter = () => {
             <Routes>
               <Route path='/' element={<ItemListContainer/>} />
               <Route path='/vinilus-store' element={<ItemListContainer/>}/>
+              <Route path='/vinilos/:vinylId' element={<ItemLayout props={<ItemDetailContainer/>}/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/categories/:catId' element={<ItemListContainer/>}/>
-              <Route path='/vinilos/:vinylId' element={<ItemLayout props={<ItemDetailContainer/>}/>}/>
+              <Route path='/cart' element={<Cart/>}/>
               <Route path='*' element={<NotFound404/>}/>
             </Routes>
       </BrowserRouter>

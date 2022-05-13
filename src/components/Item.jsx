@@ -1,13 +1,7 @@
 import { LinkContainer } from 'react-router-bootstrap'
 import './styles/Item.css'
 
-const Item = ({id,artist,album,year,img}) => {
-
-const onClick = (e) => {
-    e.preventDefault()
-    console.log("clicked")
-    }
-
+const Item = ({id,artist,album,img}) => {
 return (
     <div className="album albumCd">
         <div className="cover">  
@@ -25,7 +19,6 @@ return (
         </div> 
         </LinkContainer> 
     </div>
-   
-);
+    )
 }
 export default Item

@@ -11,3 +11,18 @@
 .nav-dropdown {
     cursor: pointer;
 }
+
+.cart_count {
+    position: absolute;
+    top: 70px;
+    right: 115px;
+    color:aqua;
+    background: grey;
+    font-weight: 500;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}

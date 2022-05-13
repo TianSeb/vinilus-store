@@ -1,20 +1,19 @@
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext.js';
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { navBarCategories } from '../../data/navBarCategories.js'
 import CartWidget from "../../components/CartWidget";
 import './NavBar.css'
 
 
+
 const NavBar = () => {
 const brand = "https://imagizer.imageshack.com/img924/1759/ALh05r.jpg"
-const categories = [
-  { id:'12312', adress:'/', text:'Inicio', subCategories:[]},
-  { id:'12313', adress:'/about', text:'Nosotros', subCategories:[]},
-  { id:'12314', adress:'/categories', text:'Vinilos', subCategories:[
-    { id:'12314-1', adress:'/categories/1960', text:'60s' },
-    { id:'12314-2', adress:'/categories/1970', text:'70s' },
-    { id:'12314-3', adress:'/categories/1980', text:'80s' },
-  ]},
-]
+
+const { cart } = useContext(CartContext)
+const totalItems = cart.reduce((acc, item) => acc + item.amount, 0);
+
 return (
 <Navbar className='navbar-container' expand='lg' collapseOnSelect variant="dark">
   <Container>
@@ -23,7 +22,7 @@ return (
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mx-auto">
       {
-        categories.map((cat) => { 
+        navBarCategories.map((cat) => { 
           if (cat.subCategories.length === 0) {
             return (<Nav.Link className='nav-link' key={cat.id} ><LinkContainer className='nav-link' to={cat.adress}><span>{cat.text}</span></LinkContainer></Nav.Link>)
           }
@@ -46,10 +45,11 @@ return (
       }
     </Nav>
     <Nav>
-      <Nav.Link eventKey={2} href="#cart">
+      <Nav.Link eventKey={2}>
         <CartWidget />
       </Nav.Link>
     </Nav>
+    {totalItems > 0 && <span className="cart_count">{totalItems}</span>}   
   </Navbar.Collapse>
   </Container>
 </Navbar>

@@ -10,7 +10,7 @@ export const getRecordDb = async (catId, setState,setLoading) => {
                 isNaN(catIdConvert) ?
                     res(vinylDb)
                     : res(vinylDb.filter( vinyl => vinyl.year >= catIdConvert && vinyl.year <= (catIdConvert + 9)))
-                },2000)
+                },100)
             })
     } 
 
@@ -28,6 +28,6 @@ export const getProductsById = async (vinylId) => {
     return new Promise((resolve) => {
     setTimeout(() => {
     resolve(vinylDb.find( vinyl => vinyl.id == vinylId))
-        }, 2000);
+        }, 100);
     })
 }

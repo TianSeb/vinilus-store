@@ -1,0 +1,47 @@
+.count-container {
+  display: grid;
+  grid-template-columns: 100px 80px; 
+  grid-template-rows: 40px;
+  grid-column-gap: 5px;
+  margin-left: 100px;
+}
+
+
+.count-container__contador {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    width: 100px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: auto ;
+  }
+  
+  .count-container__button {
+    color: black;
+    width: 100%;
+    height: 100%;
+    border: 1px solid gold;
+    font-size: 1.1rem;
+    transition: all 250ms ease-out;
+  }
+  
+  .count-container__button:hover {
+    border: none;
+    color: yellow;
+    background-color: black
+  }
+  
+  .count-container__button[disabled] {
+    color: gray;
+    background-color: transparent;
+    border: 1px solid gray;
+  }
+  
+  .count-container__qty {
+    height: 100%;
+    padding-top: 10px;
+    color: blue;
+    background-color: white
+  }
+  

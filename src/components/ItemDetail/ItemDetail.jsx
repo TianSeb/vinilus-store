@@ -1,11 +1,24 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
+import { useContext, useState } from "react"
+import { CartContext } from "../../context/CartContext"
 import NotFound404 from "../../pages/NotFound404"
+import ItemCount from "../ItemCount"
 import './ItemDetail.css'
+import LinkContainer from "react-router-bootstrap/LinkContainer"
 
 const ItemDetail = ({data}) => {
 
-return (
-     (!data) ? <NotFound404></NotFound404>
+    const { addItem } = useContext(CartContext)
+
+    const [show, setShow] = useState(true)
+
+    const onAdd = (qty) => {
+        addItem(data,qty)
+        setShow(false)
+    }
+
+    return (
+     (!data) ? <NotFound404/>
     :
     <Container className='item-wrapper'>
         <Row className='item-row'> 
@@ -20,7 +33,16 @@ return (
                     <Card.Text className='item-card-body-text'> <strong>Album: </strong> {data.album} </Card.Text>
                     <Card.Text className='item-card-body-text'> <strong>Año: </strong> {data.year} </Card.Text>
                     <Card.Text className='item-card-body-text'> <strong>Precio: </strong>${data.price} </Card.Text>
-                    <Button className='item-btn' variant="primary">Comprar</Button>
+                    {show ?
+                        <ItemCount onAdd={onAdd} initial={1} stock={10}/>
+                        :
+                        <div>
+                            <LinkContainer to={'/'}><Button className='item-btn' variant="primary">Seguir Comprando</Button></LinkContainer>
+                            <LinkContainer to={'/cart'} style={{marginLeft:'10px'}}><Button className='item-btn' variant="primary">Terminar Compra</Button></LinkContainer>
+                        </div>
+                    }
+                    
+                    
                 </Card.Body>
             </Card>
             </Col>
