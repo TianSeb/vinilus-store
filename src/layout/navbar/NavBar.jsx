@@ -47,9 +47,9 @@ return (
     <Nav>
       <Nav.Link eventKey={2}>
         <CartWidget />
+        {totalItems > 0 && <div className="cart_count">{totalItems}</div>}   
       </Nav.Link>
     </Nav>
-    {totalItems > 0 && <span className="cart_count">{totalItems}</span>}   
   </Navbar.Collapse>
   </Container>
 </Navbar>

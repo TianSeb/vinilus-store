@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import ItemList from './ItemList'
-import { getRecordDb } from '../../helper/helper'
+import { getItemsFirebase } from '../../helper/helper'
 import './ItemListContainer.css'
 
 const ItemListContainer = () => {
@@ -12,7 +12,7 @@ const ItemListContainer = () => {
     useEffect(() => 
         {
         setLoading(true)
-        getRecordDb(catId,setRecords,setLoading)
+        getItemsFirebase(catId,setRecords,setLoading)
         }
         ,[catId])
 
