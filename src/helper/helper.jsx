@@ -6,7 +6,7 @@ export const getProductsById = async (vinylId) => {
     const vinilos = collection(db,'itemList')
 
     try {
-        const q  = query(vinilos, where('id',"===", '1'))  
+        const q  = query(vinilos, where('id',"==", '1'))  
         const snapshot = await getDocs(q)
         const itemDetail = snapshot.docs.map( d => ({'id': d.id, ...d.data()}))
 
