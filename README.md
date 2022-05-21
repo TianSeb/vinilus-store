@@ -20,5 +20,5 @@
 
 ## App 
 
-- To simulate a call to a Database, I´m using Promises (both ways, with async and then) with 2s delay. 
-- For now, Database is on a js file, in DATA folder.
+- Database is hosted in Firebase.
+- Helper functions manage Database conection.
