@@ -3,6 +3,21 @@
     cursor: pointer;
     text-align: center;
     width: 80px;
-    justify-self: end;
     margin-right: 60px;
   }
+
+  .cart_count {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    margin-left: 30px;
+    color:aqua;
+    background: grey;
+    font-weight: 500;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}

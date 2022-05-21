@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProductsById } from '../../helper/helper'
+import { getProductById } from '../../helper/helper'
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
@@ -10,13 +10,11 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     (async() => {
-        const vinylData = await getProductsById(vinylId)
-            
+        const vinylData = await getProductById(vinylId)
             setVinyl(vinylData)
             setLoading(false)
-
-            console.log(...vinylData)
       })()
+      
   }, [vinylId])
 
   return loading ? <h2 style={{textAlign:'center', marginTop:'15%'}}> Cargando Item... </h2> : <ItemDetail data={vinyl} />

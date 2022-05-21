@@ -1,17 +1,15 @@
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext.js';
+import { CartContext, useCartContext } from '../../context/CartContext.js';
 import { LinkContainer } from 'react-router-bootstrap'
+import { NavLink } from 'react-router-dom';
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { navBarCategories } from '../../data/navBarCategories.js'
 import CartWidget from "../../components/CartWidget";
 import './NavBar.css'
 
-
-
 const NavBar = () => {
 const brand = "https://imagizer.imageshack.com/img924/1759/ALh05r.jpg"
 
-const { cart } = useContext(CartContext)
+const { cart } = useCartContext()
 const totalItems = cart.reduce((acc, item) => acc + item.amount, 0);
 
 return (
@@ -44,12 +42,9 @@ return (
         })
       }
     </Nav>
-    <Nav>
-      <Nav.Link eventKey={2}>
-        <CartWidget />
-        {totalItems > 0 && <div className="cart_count">{totalItems}</div>}   
-      </Nav.Link>
-    </Nav>
+      <NavLink to='/cart'>
+        <CartWidget totalItems={totalItems} />
+      </NavLink>
   </Navbar.Collapse>
   </Container>
 </Navbar>
