@@ -2,7 +2,7 @@ import { useState, createContext, useContext } from 'react'
 
 export const CartContext = createContext({})
 
-export const useCartContext = () => { return useContext(CartContext) }
+export const useCartContext = () => useContext(CartContext) 
 
 export const CartProvider = ({defaultValue = [], children}) => {
     const [cart, setCart] = useState(defaultValue)
@@ -38,7 +38,7 @@ export const CartProvider = ({defaultValue = [], children}) => {
           return i;
       });
       setCart(newCart);
-  };
+     };
 
   const decreaseQuantity = (item) => {
       const newCart = cart.map(i => {
@@ -48,7 +48,7 @@ export const CartProvider = ({defaultValue = [], children}) => {
           return i;
       });
       setCart(newCart);
-  };
+     };
 
     return (
         <CartContext.Provider value={{ cart, setCart, addItem, isInCart, totalAmountCart, increaseQuantity, decreaseQuantity, removeItem}}>

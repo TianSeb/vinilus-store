@@ -1,4 +1,4 @@
-import { useCartContext, CartContext } from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Button, Table } from "react-bootstrap"
 
@@ -47,7 +47,7 @@ const CartDetail = ({cart}) => {
               </tbody>
             </Table>
               <Container style={{marginTop:'50px'}}>
-              <LinkContainer to='/'><Button onClick={() => removeItem('')}>Terminar Compra</Button></LinkContainer>
+                <LinkContainer to='/checkout'><Button>Terminar Compra</Button></LinkContainer>
               </Container> 
     </Container>
   )

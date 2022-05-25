@@ -1,4 +1,4 @@
-import { useCartContext, CartContext } from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Button } from "react-bootstrap"
 import  CartDetail from './CartDetail'

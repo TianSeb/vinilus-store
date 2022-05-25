@@ -1,5 +1,5 @@
-import { collection ,getDoc, getDocs, doc, getFirestore } from "firebase/firestore";
-
+import { collection ,getDoc, getDocs, doc, getFirestore, query, where } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 export const getProductById = async (id) => {
     
@@ -17,20 +17,23 @@ export const getProductById = async (id) => {
 export const getItemsFirebase = async (catId, setState,setLoading) => {
 
     const catIdConvert = parseInt(catId) 
+
     const db = getFirestore()
     const vinilos = collection(db,'itemList')
+    const itemByYear = query(vinilos,where('year','>=',catIdConvert),where('year','<=',(catIdConvert + 9)))
 
-     try {
-        const snapshot = await getDocs(vinilos)
+    try {
+        const snapshot = isNaN(catIdConvert) ? await getDocs(vinilos) : await getDocs(itemByYear)
         const itemList = snapshot.docs.map( d => ({'id': d.id, ...d.data()}))
 
         setLoading(false)
-        return isNaN(catIdConvert) ?
-                    setState(itemList) 
-                    :  setState(itemList
-                                .filter( vinyl => vinyl.year >= catIdConvert && vinyl.year <= (catIdConvert + 9)))
+        setState(itemList)
         
-     } catch(e) {
+    } catch(e) {
         console.log(e)
-     }
+    }
+}
+
+export const useNavigateHook = (path) => {
+    return useNavigate(path)
 }

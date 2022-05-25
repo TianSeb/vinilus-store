@@ -6,6 +6,7 @@ import About from '../pages/About';
 import CartList from '../components/Cart/CartList'
 import NotFound404 from '../pages/NotFound404';
 import ItemLayout from '../pages/ItemLayout'
+import Checkout from '../components/Cart/Checkout'
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
               <Route path='/about' element={<About/>}/>
               <Route path='/categories/:catId' element={<ItemListContainer/>}/>
               <Route path='/cart' element={<CartList/>}/>
+              <Route path='/checkout' element={<Checkout/>}/>
               <Route path='*' element={<NotFound404/>}/>
             </Routes>
       </BrowserRouter>
