@@ -40,7 +40,7 @@ export const CartProvider = ({defaultValue = [], children}) => {
       setCart(newCart);
      };
 
-  const decreaseQuantity = (item) => {
+    const decreaseQuantity = (item) => {
       const newCart = cart.map(i => {
           if ((i.id === item.id) && (i.amount > 1)) {
               return { ...i, amount: i.amount - 1 };
@@ -49,6 +49,10 @@ export const CartProvider = ({defaultValue = [], children}) => {
       });
       setCart(newCart);
      };
+
+    const checkStock = (amount) => {
+        
+    }
 
     return (
         <CartContext.Provider value={{ cart, setCart, addItem, isInCart, totalAmountCart, increaseQuantity, decreaseQuantity, removeItem}}>

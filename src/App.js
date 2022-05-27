@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <CartProvider>
-        <AppRouter/>
+          <AppRouter/>
       </CartProvider>
     </>
   );

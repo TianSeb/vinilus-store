@@ -1,8 +1,8 @@
-import { CartContext, useCartContext } from '../../context/CartContext.js';
+import { useCartContext } from '../../context/CartContext.js';
 import { LinkContainer } from 'react-router-bootstrap'
 import { NavLink } from 'react-router-dom';
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { navBarCategories } from '../../data/navBarCategories.js'
+import { navBarCategories } from './navBarCategories'
 import CartWidget from "../../components/CartWidget";
 import './NavBar.css'
 

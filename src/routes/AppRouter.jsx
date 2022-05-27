@@ -5,21 +5,32 @@ import NavBar from '../layout/navbar/NavBar';
 import About from '../pages/About';
 import CartList from '../components/Cart/CartList'
 import NotFound404 from '../pages/NotFound404';
-import ItemLayout from '../pages/ItemLayout'
 import Checkout from '../components/Cart/Checkout'
+import Signup from '../login/Signup';
+import Login from '../login/Login';
+import PasswordReset from '../login/PasswordReset';
+import Dashboard from '../login/Dashboard';
+import PrivateRoute from './PrivateRoutes';
+import UpdateProfile from '../login/UpdateProfile';
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
           <NavBar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer/>} />
+            <Route exact path='/' element={<ItemListContainer/>} />
               <Route path='/vinilus-store' element={<ItemListContainer/>}/>
-              <Route path='/vinilos/:vinylId' element={<ItemLayout props={<ItemDetailContainer/>}/>}/>
+              <Route path='/vinilos/:vinylId' element={<ItemDetailContainer/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/categories/:catId' element={<ItemListContainer/>}/>
               <Route path='/cart' element={<CartList/>}/>
-              <Route path='/checkout' element={<Checkout/>}/>
+              <Route path="/checkout"
+                element={
+                  <PrivateRoute>
+                    <Checkout />
+                  </PrivateRoute>
+                }
+              />
               <Route path='*' element={<NotFound404/>}/>
             </Routes>
       </BrowserRouter>
