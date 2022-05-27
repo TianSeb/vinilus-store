@@ -41,18 +41,19 @@ export const CartProvider = ({defaultValue = [], children}) => {
      };
 
     const decreaseQuantity = (item) => {
-      const newCart = cart.map(i => {
-          if ((i.id === item.id) && (i.amount > 1)) {
-              return { ...i, amount: i.amount - 1 };
-          }
-          return i;
-      });
-      setCart(newCart);
+        if(item.amount === 1) {
+            removeItem(item)
+        }
+        else {
+            const newCart = cart.map(i => {
+                if ((i.id === item.id) && (i.amount > 1)) {
+                    return { ...i, amount: i.amount - 1 };
+                }
+                return i;
+            });
+            setCart(newCart);
+        }
      };
-
-    const checkStock = (amount) => {
-        
-    }
 
     return (
         <CartContext.Provider value={{ cart, setCart, addItem, isInCart, totalAmountCart, increaseQuantity, decreaseQuantity, removeItem}}>

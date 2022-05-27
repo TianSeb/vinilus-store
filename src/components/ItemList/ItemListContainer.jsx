@@ -11,8 +11,8 @@ const ItemListContainer = () => {
 
     useEffect(() => 
         {
-        setLoading(true)
-        getItemsFirebase(catId,setRecords,setLoading)
+            setLoading(true)
+            getItemsFirebase(catId,setRecords,setLoading)
         }
         ,[catId])
 

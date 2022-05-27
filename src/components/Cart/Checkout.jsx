@@ -42,9 +42,8 @@ const Checkout = () => {
       setShow(false)
       removeItem('')
     }
-
   }
-
+  
   return (
       <Container className='d-flex align-items-center justify-content-center mt-3' style={{ minHeight: '60vh'}}>
           {
