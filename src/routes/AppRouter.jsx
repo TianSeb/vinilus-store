@@ -6,12 +6,7 @@ import About from '../pages/About';
 import CartList from '../components/Cart/CartList'
 import NotFound404 from '../pages/NotFound404';
 import Checkout from '../components/Cart/Checkout'
-import Signup from '../login/Signup';
-import Login from '../login/Login';
-import PasswordReset from '../login/PasswordReset';
-import Dashboard from '../login/Dashboard';
 import PrivateRoute from './PrivateRoutes';
-import UpdateProfile from '../login/UpdateProfile';
 
 const AppRouter = () => {
   return (
