@@ -10,7 +10,7 @@ const Checkout = () => {
   const [show,setShow] = useState(true)
   const [error,setError] = useState('')
   const [orderId, setOrderId] = useState()
-  const [form,setForm] = useState({name:'',email:'',emailConfirmation:'',phone:0})
+  const [form,setForm] = useState({name:'',email:'',emailConfirmation:'tbd',phone:0})
 
   const db = getFirestore()
  
@@ -33,14 +33,9 @@ const Checkout = () => {
 
   const orderPlaced = async (e) => {
     e.preventDefault()
-    if(form.email !== form.emailConfirmation) {
-      setError('Las casillas de email no coinciden')
-    }
 
-    if (cart.length === 0) {
-      setError('No hay items en el carro')
-    }
-
+    const validation = formValidation(form)
+    if (!validation) return
     else {
       setError('')
       const orderSaved = await saveOrder(order)
@@ -49,6 +44,23 @@ const Checkout = () => {
     }
   }
   
+  const formValidation = (form) => {
+    if(form.name.length < 3) {
+      setError('El campo nombre no puede estar vacío ');
+      return false
+    }
+    if(form.email !== form.emailConfirmation) {
+      setError('Las casillas de email no coinciden')
+      return false
+    }
+
+    if (cart.length === 0) {
+      setError('No hay items en el carro')
+      return false
+    }
+    return true
+  }
+
   return (
       <Container className='d-flex align-items-center justify-content-center mt-5' style={{ minHeight: '60vh'}}>
           {
