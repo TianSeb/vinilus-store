@@ -33,9 +33,12 @@ const Checkout = () => {
 
   const orderPlaced = async (e) => {
     e.preventDefault()
+    const validation = formValidation()
 
-    const validation = formValidation(form)
-    if (!validation) return
+    if (validation) {
+      setError('Chequea que los campos sean válidos')
+      return
+    }
     else {
       setError('')
       const orderSaved = await saveOrder(order)
@@ -44,21 +47,12 @@ const Checkout = () => {
     }
   }
   
-  const formValidation = (form) => {
-    if(form.name.length < 3) {
-      setError('El campo nombre no puede estar vacío ');
-      return false
-    }
-    if(form.email !== form.emailConfirmation) {
-      setError('Las casillas de email no coinciden')
-      return false
-    }
-
-    if (cart.length === 0) {
-      setError('No hay items en el carro')
-      return false
-    }
-    return true
+  const formValidation = () => {
+    const isEmptyCart = cart.length === 0
+    const isEmptyFormName = form.name.length < 4
+    const emailsAreDifferent = form.email !== form.emailConfirmation
+    
+    return isEmptyCart || isEmptyFormName || emailsAreDifferent ? true : false
   }
 
   return (
