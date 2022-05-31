@@ -6,7 +6,6 @@ import About from '../pages/About';
 import CartList from '../components/Cart/CartList'
 import NotFound404 from '../pages/NotFound404';
 import Checkout from '../components/Cart/Checkout'
-import PrivateRoute from './PrivateRoutes';
 
 const AppRouter = () => {
   return (
@@ -14,18 +13,11 @@ const AppRouter = () => {
           <NavBar/>
             <Routes>
             <Route exact path='/' element={<ItemListContainer/>} />
-              <Route path='/vinilus-store' element={<ItemListContainer/>}/>
               <Route path='/vinilos/:vinylId' element={<ItemDetailContainer/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/categories/:catId' element={<ItemListContainer/>}/>
               <Route path='/cart' element={<CartList/>}/>
-              <Route path="/checkout"
-                element={
-                  <PrivateRoute>
-                    <Checkout />
-                  </PrivateRoute>
-                }
-              />
+              <Route path="/checkout" element={<Checkout/>}/>
               <Route path='*' element={<NotFound404/>}/>
             </Routes>
       </BrowserRouter>

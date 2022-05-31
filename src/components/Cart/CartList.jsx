@@ -13,10 +13,10 @@ const CartList = () => {
           cart.length > 0 ? 
             <CartDetail cart={cart}/>
             : 
-          <Container >
+            <Container >
               <h3>Carro Vacío</h3>
               <LinkContainer to='/'><Button>Seguir comprando</Button></LinkContainer>
-          </Container>    
+            </Container>    
           }
     </Container>
   )

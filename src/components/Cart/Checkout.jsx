@@ -36,6 +36,11 @@ const Checkout = () => {
     if(form.email !== form.emailConfirmation) {
       setError('Las casillas de email no coinciden')
     }
+
+    if (cart.length === 0) {
+      setError('No hay items en el carro')
+    }
+
     else {
       setError('')
       const orderSaved = await saveOrder(order)
@@ -45,7 +50,7 @@ const Checkout = () => {
   }
   
   return (
-      <Container className='d-flex align-items-center justify-content-center mt-3' style={{ minHeight: '60vh'}}>
+      <Container className='d-flex align-items-center justify-content-center mt-5' style={{ minHeight: '60vh'}}>
           {
             (show) ? 
             <CheckoutForm setForm={setForm} form={form} orderPlaced={orderPlaced} error={error}/>

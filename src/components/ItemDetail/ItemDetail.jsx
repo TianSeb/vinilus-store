@@ -1,11 +1,10 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
 import { useState } from "react"
-import { CartContext, useCartContext } from "../../context/CartContext"
+import { useCartContext } from "../../context/CartContext"
 import NotFound404 from "../../pages/NotFound404"
 import ItemCount from "../ItemCount"
 import LinkContainer from "react-router-bootstrap/LinkContainer"
 import './ItemDetail.css'
-
 
 const ItemDetail = ({data}) => {
 
@@ -21,32 +20,33 @@ const ItemDetail = ({data}) => {
     return (
      (!data) ? <NotFound404/>
     :
-    <Container className='item-wrapper'>
-        <Row className='item-row'> 
-            <Col className='item-column' xs={12} sm={12} md={8} lg={6}>
-                <Card.Img className='item-img' variant="top" src={data.img}/> 
-            </Col>
-            <Col className='item-column' xs={12} sm={12} md={8} lg={6}>
-            <Card className='item-card'>
-                <Card.Body className='item-card-body'>
-                    <Card.Title className='item-card-body-title'>{data.artist} - {data.album}</Card.Title>
-                    <Card.Text className='item-card-body-text'> <strong>Artista: </strong> {data.artist} </Card.Text>
-                    <Card.Text className='item-card-body-text'> <strong>Album: </strong> {data.album} </Card.Text>
-                    <Card.Text className='item-card-body-text'> <strong>Año: </strong> {data.year} </Card.Text>
-                    <Card.Text className='item-card-body-text'> <strong>Precio: </strong>${data.price} </Card.Text>
-                    {show ?
+    <>
+        <Card style={{maxHeight:'800px', maxWidth:'800px', margin:'0 auto', float:'none'}}>
+            <Row className="row">
+                <Col className='col-md-6'>
+                    <Card.Img src={data.img} alt="x" style={{width:'100%', minHeight:'300px', minWidth:'300px'}} />
+                </Col>
+                <Col className="col-md-6">
+                    <div style={{marginTop:'30px'}} >
+                    <Card.Title style={{textAlign:'center', marginBottom:'25px'}} >{data.artist} - {data.album}</Card.Title>
+                    <Card.Text> <strong>Artista: </strong> {data.artist} </Card.Text>
+                    <Card.Text> <strong>Album: </strong> {data.album} </Card.Text>
+                    <Card.Text> <strong>Año: </strong> {data.year} </Card.Text>
+                    <Card.Text> <strong>Precio: </strong>${data.price} </Card.Text>
+                    { 
+                        show ?
                         <ItemCount onAdd={onAdd} initial={1} stock={data.stock}/>
                         :
-                        <div>
+                        <Card.Text>
                             <LinkContainer to={'/'}><Button className='item-btn' variant="primary">Seguir Comprando</Button></LinkContainer>
                             <LinkContainer to={'/cart'} style={{marginLeft:'10px'}}><Button className='item-btn' variant="primary">Terminar Compra</Button></LinkContainer>
-                        </div>
+                        </Card.Text>
                     }
-                </Card.Body>
-            </Card>
-            </Col>
-        </Row>
-    </Container>
-)
+                    </div>
+                </Col>
+            </Row>
+        </Card>
+    </>
+    )
 }
 export default ItemDetail

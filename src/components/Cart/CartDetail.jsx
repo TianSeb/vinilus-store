@@ -29,8 +29,8 @@ const CartDetail = ({cart}) => {
                         <td>$ {item.price}</td>
                         <td>$ {item.price * item.amount}</td>
                         <td>
-                          <Button className='w-25' style={{marginLeft:'2px'}} onClick={() => decreaseQuantity(item)}>-</Button> 
-                          <Button className='w-25' style={{marginLeft:'2px'}} onClick={() => increaseQuantity(item)}>+</Button>
+                          <Button className='w-25' style={{marginLeft:'2px', backgroundColor:'red'}} onClick={() => decreaseQuantity(item)}>-</Button> 
+                          <Button className='w-25' style={{marginLeft:'2px', backgroundColor:'green'}} onClick={() => increaseQuantity(item)}>+</Button>
                         </td>
                       </tr>
                   )
