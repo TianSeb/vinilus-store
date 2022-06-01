@@ -25,4 +25,4 @@
 
 ## GIF Funcionalidad
 
-![Buncits](https://giphy.com/embed/7RbyCgzQkdrFPpugZY)
+![Alt Text](https://giphy.com/embed/7RbyCgzQkdrFPpugZY/giphy.gif)
