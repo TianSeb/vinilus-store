@@ -25,4 +25,4 @@
 
 ## GIF Funcionalidad
 
-![Alt Text](https://giphy.com/embed/7RbyCgzQkdrFPpugZY/giphy.gif)
+![](giphy.gif)
