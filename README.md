@@ -22,3 +22,7 @@
 
 - Database is hosted in Firebase.
 - Helper functions manage Database conection.
+
+## GIF Funcionalidad
+
+![Buncits](https://giphy.com/embed/7RbyCgzQkdrFPpugZY)
