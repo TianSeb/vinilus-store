@@ -1,28 +1,49 @@
-## Vinilus - Store
+## Vinilus - Store by Sebastián Alasia
 
-- E-commerce for selling Vinyls Records.
+- E-commerce project in React JS
 
-## Installing
+## Deploy https://vinilus-store.vercel.app/
 
-- Fork and clone the project
-- Run npm install
-- Run npm start , that will start the app on localhost:3000
-## Deploy https://TianSeb.github.io/vinilus-store
-
-- Configured Pipeline to build in GH Pages on every deploy (npm run deploy)
-- If you want to set your own Pipeline:
-- Change "homepage" field in package.json, you may also have to set the configurations on your own repository.
+- Deploy App in vercel.com, from my github.
 
 ## Dependencies
 
-- react-bootstrap for styling
-- react-router-dom for navigation
+- react-bootstrap for Styling
+- fortawesome for the icons
 
-## App 
-
-- Database is hosted in Firebase.
-- Helper functions manage Database conection.
-
-## GIF Funcionalidad
+## GIF explaining functionality
 
 ![](giphy.gif)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

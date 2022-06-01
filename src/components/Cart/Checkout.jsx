@@ -14,6 +14,8 @@ const Checkout = () => {
 
   const db = getFirestore()
  
+  const date = new Date().toLocaleString()
+
   const order = {
     buyer: Object.keys(form)
             .filter((key) => !key.includes('emailConfirmation'))
@@ -23,7 +25,17 @@ const Checkout = () => {
                   album: item.album,
                   amount: item.amount
                 }}),
-    total: totalAmountCart
+    total: totalAmountCart,
+    date: date
+  }
+  
+  const formValidation = () => {
+    const isEmptyCart = cart.length === 0
+    const isEmptyFormName = form.name.length < 4
+    const isEmptyTelephone = form.phone.length < 8
+    const emailsAreDifferent = form.email !== form.emailConfirmation
+    
+    return isEmptyCart || isEmptyFormName || emailsAreDifferent || isEmptyTelephone ? true : false
   }
 
   const saveOrder = async (order) => {
@@ -47,14 +59,7 @@ const Checkout = () => {
     }
   }
   
-  const formValidation = () => {
-    const isEmptyCart = cart.length === 0
-    const isEmptyFormName = form.name.length < 4
-    const isEmptyTelephone = form.phone.length < 8
-    const emailsAreDifferent = form.email !== form.emailConfirmation
-    
-    return isEmptyCart || isEmptyFormName || emailsAreDifferent || isEmptyTelephone ? true : false
-  }
+
 
   return (
       <Container className='d-flex align-items-center justify-content-center mt-5' style={{ minHeight: '60vh'}}>
