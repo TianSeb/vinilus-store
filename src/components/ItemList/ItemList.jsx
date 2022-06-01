@@ -1,9 +1,10 @@
+import { Container } from 'react-bootstrap'
 import Item from "../Item"
 import './ItemList.css'
 
 const ItemList = ({items}) => {
     return (
-        <div className='wrapper'>
+        <Container className='wrapper'>
             {
                 items.map((item) =>
                     <Item
@@ -16,7 +17,7 @@ const ItemList = ({items}) => {
                     />
                 )
             }
-        </div>
+        </Container>
     );
 }
 

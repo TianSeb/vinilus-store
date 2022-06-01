@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from '../components/ItemDetail/ItemDetailContainer';
-import ItemListContainer from '../components/ItemList/ItemListContainer';
-import NavBar from '../layout/navbar/NavBar';
-import About from '../pages/About';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import About from '../pages/About'
 import CartList from '../components/Cart/CartList'
-import NotFound404 from '../pages/NotFound404';
 import Checkout from '../components/Cart/Checkout'
+import ItemDetailContainer from '../components/ItemDetail/ItemDetailContainer'
+import ItemListContainer from '../components/ItemList/ItemListContainer'
+import NavBar from '../layout/navbar/NavBar'
+import NotFound404 from '../pages/NotFound404'
 
 const AppRouter = () => {
   return (

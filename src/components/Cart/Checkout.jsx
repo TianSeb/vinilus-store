@@ -10,7 +10,7 @@ const Checkout = () => {
   const [show,setShow] = useState(true)
   const [error,setError] = useState('')
   const [orderId, setOrderId] = useState()
-  const [form,setForm] = useState({name:'',email:'',emailConfirmation:'tbd',phone:0})
+  const [form,setForm] = useState({name:'',email:'',emailConfirmation:'tbd',phone:''})
 
   const db = getFirestore()
  
@@ -50,9 +50,10 @@ const Checkout = () => {
   const formValidation = () => {
     const isEmptyCart = cart.length === 0
     const isEmptyFormName = form.name.length < 4
+    const isEmptyTelephone = form.phone.length < 8
     const emailsAreDifferent = form.email !== form.emailConfirmation
     
-    return isEmptyCart || isEmptyFormName || emailsAreDifferent ? true : false
+    return isEmptyCart || isEmptyFormName || emailsAreDifferent || isEmptyTelephone ? true : false
   }
 
   return (
